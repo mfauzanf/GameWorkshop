@@ -1,0 +1,288 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Event sheet 1</name>
+    <events>
+        <variable constant="0" name="Score" sid="3425257822629935" static="0" type="number">0</variable>
+        <variable constant="0" name="ScrollSpeed" sid="9159165258846134" static="0" type="number">300</variable>
+        <variable constant="0" name="KekuatanLompat" sid="1284949060989903" static="0" type="number">500</variable>
+        <variable constant="0" name="DetikPerRintangan" sid="1308689785362313" static="0" type="number">1</variable>
+        <event-block sid="3490361228768196">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="9061615159026537" type="System" />
+            </conditions>
+            <actions>
+                <action id="-1" name="Set X" sid="1778766316011322" type="TileAtas">
+                    <param id="0" name="X">0</param>
+                </action>
+                <action id="-1" name="Set X" sid="7006957255507905" type="TileBawah">
+                    <param id="0" name="X">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="4417749189577578" type="PipaAtas" />
+                <action id="-9" name="Destroy" sid="2335303946918806" type="PipaBawah" />
+                <action behavior="Platform" id="9" name="Set vector Y" sid="3683544568271122" type="Burung">
+                    <param id="0" name="Vector Y">-KekuatanLompat</param>
+                </action>
+                <action id="-8" name="Set angle" sid="5680907374614113" type="Burung">
+                    <param id="0" name="Angle">320</param>
+                </action>
+                <action id="-9" name="Set value" sid="7671909831042084" type="System">
+                    <param id="0" name="Variable">Score</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="4472821888629528" type="System">
+                    <param id="0" name="Variable">ScrollSpeed</param>
+                    <param id="1" name="Value">300</param>
+                </action>
+                <action id="-3" name="Set position" sid="2818810416146791" type="Sprite">
+                    <param id="0" name="X">-211</param>
+                    <param id="1" name="Y">607</param>
+                </action>
+                <action id="-3" name="Set position" sid="6634033921798016" type="Button">
+                    <param id="0" name="X">-406</param>
+                    <param id="1" name="Y">389</param>
+                </action>
+                <action id="-3" name="Set position" sid="8607532001840127" type="Text">
+                    <param id="0" name="X">25</param>
+                    <param id="1" name="Y">25</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="9725582240720678">
+            <conditions>
+                <condition id="1" name="On any click" sid="2535400170943207" type="Mouse" />
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="9" name="Set vector Y" sid="7254386823914678" type="Burung">
+                    <param id="0" name="Vector Y">-KekuatanLompat</param>
+                </action>
+                <action id="-8" name="Set angle" sid="8097266903407663" type="Burung">
+                    <param id="0" name="Angle">320</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="2118397133028959">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="7701658661935026" type="System" />
+            </conditions>
+            <actions>
+                <action id="-18" name="Rotate clockwise" sid="273356158357023" type="Burung">
+                    <param id="0" name="Degrees">60*dt</param>
+                </action>
+                <action id="-1" name="Set X" sid="1161636711430844" type="PipaAtas">
+                    <param id="0" name="X">PipaAtas.X - ScrollSpeed*dt</param>
+                </action>
+                <action id="-1" name="Set X" sid="241630454216449" type="PipaBawah">
+                    <param id="0" name="X">PipaBawah.X - ScrollSpeed*dt</param>
+                </action>
+                <action id="-1" name="Set X" sid="2135257911579072" type="TileAtas">
+                    <param id="0" name="X">TileAtas.X - ScrollSpeed*dt</param>
+                </action>
+                <action id="-1" name="Set X" sid="830593614055872" type="TileBawah">
+                    <param id="0" name="X">TileBawah.X - ScrollSpeed*dt</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="351678794957444">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="9384983806661947" type="Burung">
+                    <param id="0" name="Object">TileAtas</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="0" name="Set ignoring input" sid="6559488935825439" type="Burung">
+                    <param id="0" name="Input">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="1958271242500679" type="System">
+                    <param id="0" name="Variable">ScrollSpeed</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-13" name="Set time scale" sid="3836505374119179" type="System">
+                    <param id="0" name="Time scale">0</param>
+                </action>
+                <action id="-3" name="Set position" sid="9451003154724279" type="Sprite">
+                    <param id="0" name="X">211</param>
+                    <param id="1" name="Y">254</param>
+                </action>
+                <action id="-3" name="Set position" sid="21155475081148" type="Button">
+                    <param id="0" name="X">175</param>
+                    <param id="1" name="Y">313</param>
+                </action>
+                <action id="-3" name="Set position" sid="2009422143050176" type="Text">
+                    <param id="0" name="X">227</param>
+                    <param id="1" name="Y">234</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="8745762576351267">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="6742334274121917" type="Burung">
+                    <param id="0" name="Object">PipaAtas</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="0" name="Set ignoring input" sid="6697724819060253" type="Burung">
+                    <param id="0" name="Input">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="8382285222679391" type="System">
+                    <param id="0" name="Variable">ScrollSpeed</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-13" name="Set time scale" sid="1295626081416613" type="System">
+                    <param id="0" name="Time scale">0</param>
+                </action>
+                <action id="-3" name="Set position" sid="7074891372986102" type="Sprite">
+                    <param id="0" name="X">211</param>
+                    <param id="1" name="Y">254</param>
+                </action>
+                <action id="-3" name="Set position" sid="1070467059923559" type="Button">
+                    <param id="0" name="X">175</param>
+                    <param id="1" name="Y">313</param>
+                </action>
+                <action id="-3" name="Set position" sid="17379468108082" type="Text">
+                    <param id="0" name="X">227</param>
+                    <param id="1" name="Y">234</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="38150700242198">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="308010796125957" type="Burung">
+                    <param id="0" name="Object">PipaBawah</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="0" name="Set ignoring input" sid="6351528479224309" type="Burung">
+                    <param id="0" name="Input">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="5199388876851379" type="System">
+                    <param id="0" name="Variable">ScrollSpeed</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-13" name="Set time scale" sid="3802303837921028" type="System">
+                    <param id="0" name="Time scale">0</param>
+                </action>
+                <action id="-3" name="Set position" sid="4098312096441334" type="Sprite">
+                    <param id="0" name="X">211</param>
+                    <param id="1" name="Y">254</param>
+                </action>
+                <action id="-3" name="Set position" sid="6000864617969462" type="Button">
+                    <param id="0" name="X">175</param>
+                    <param id="1" name="Y">313</param>
+                </action>
+                <action id="-3" name="Set position" sid="5827640578520667" type="Text">
+                    <param id="0" name="X">227</param>
+                    <param id="1" name="Y">234</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="5989480702705317">
+            <conditions>
+                <condition id="-1" name="Compare X" sid="182935192912542" type="TileAtas">
+                    <param id="0" name="Comparison">3</param>
+                    <param id="1" name="X co-ordinate">-410</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-1" name="Set X" sid="2954510763916838" type="TileAtas">
+                    <param id="0" name="X">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3554014960802165">
+            <conditions>
+                <condition id="-1" name="Compare X" sid="9504661779637936" type="TileBawah">
+                    <param id="0" name="Comparison">3</param>
+                    <param id="1" name="X co-ordinate">-560</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-1" name="Set X" sid="5091103443108287" type="TileBawah">
+                    <param id="0" name="X">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="1522067366298475">
+            <conditions>
+                <condition id="-1" name="Compare X" sid="6366778617197857" type="PipaAtas">
+                    <param id="0" name="Comparison">2</param>
+                    <param id="1" name="X co-ordinate">-50</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="7093917910160371" type="PipaAtas" />
+            </actions>
+        </event-block>
+        <event-block sid="9623703608101711">
+            <conditions>
+                <condition id="-1" name="Compare X" sid="9626487273047225" type="PipaBawah">
+                    <param id="0" name="Comparison">3</param>
+                    <param id="1" name="X co-ordinate">-50</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="6972325752213638" type="PipaBawah" />
+            </actions>
+        </event-block>
+        <event-block sid="1535623060963114">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="4218981589188539" type="System">
+                    <param id="0" name="Interval (seconds)">DetikPerRintangan</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="5124154248525048" type="System">
+                    <param id="0" name="Object to create">PipaAtas</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="X">440</param>
+                    <param id="3" name="Y">random(50,-250)</param>
+                </action>
+                <action id="-3" name="Create object" sid="8593379866246548" type="System">
+                    <param id="0" name="Object to create">PipaBawah</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="X">440</param>
+                    <param id="3" name="Y">PipaAtas.Y +700</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="138567448714947" type="PipaBawah">
+                    <param id="0" name="Instance variable">Score</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="9798649150685894">
+            <conditions>
+                <condition id="-1" name="Compare X" sid="7001782946346912" type="PipaBawah">
+                    <param id="0" name="Comparison">3</param>
+                    <param id="1" name="X co-ordinate">Burung.X</param>
+                </condition>
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="1735551238768374" type="PipaBawah">
+                    <param id="0" name="Instance variable">Score</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="2433805248088851" type="System">
+                    <param id="0" name="Variable">Score</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Set text" sid="9961418049164927" type="Text">
+                    <param id="0" name="Text">Score</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="2312147852110556" type="PipaBawah">
+                    <param id="0" name="Instance variable">Score</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="9797547463443052">
+            <conditions>
+                <condition id="0" name="On clicked" sid="3781087920271359" type="Button" />
+            </conditions>
+            <actions>
+                <action id="-26" name="Restart layout" sid="5799952539536087" type="System" />
+                <action id="-13" name="Set time scale" sid="7516125484500313" type="System">
+                    <param id="0" name="Time scale">1.0</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
